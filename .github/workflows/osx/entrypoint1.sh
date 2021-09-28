@@ -53,12 +53,12 @@ cd LHAPDF-6.2.1
 make -j 2  install
 cd ..
 ###########
-#wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
-#tar zxfv HepMC-2.06.11.tar.gz
-#cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
-#make -j 2 -C buildHepMC-2.06.11
-#make install -C buildHepMC-2.06.11
-#cd ..
+wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
+tar zxfv HepMC-2.06.11.tar.gz
+cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
+make -j 2 -C buildHepMC-2.06.11
+make install -C buildHepMC-2.06.11
+cd ..
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
