@@ -65,7 +65,7 @@ cd rapgap
 git checkout cmake
 autoreconf -fisv
 #this will enable hepmc3 only if it is present
-./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local  --with-lhapdf=/usr/local
+./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local  --with-lhapdf6=/usr/local
 make -j 2 
 make install 
 export HEPMCOUT=output.hepmc
