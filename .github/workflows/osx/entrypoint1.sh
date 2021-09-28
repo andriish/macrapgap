@@ -46,9 +46,9 @@ cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 #cd ..
 #find /usr | grep HepMC3
 ########
-wget  https://www.hepforge.org/archive/lhapdf/LHAPDF-6.2.1.tar.gz
-tar zxvf LHAPDF-6.2.1.tar.gz
-cd LHAPDF-6.2.1
+wget  https://www.hepforge.org/archive/lhapdf/LHAPDF-6.3.0.tar.gz
+tar zxvf LHAPDF-6.3.0.tar.gz
+cd LHAPDF-6.3.0
 ./configure --prefix=/usr/local
 make -j 2  install
 cd ..
