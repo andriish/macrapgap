@@ -52,6 +52,7 @@ cd LHAPDF-6.2.1
 ./configure --prefix=/usr/local
 make -j 2  install
 cd ..
+lhapdf install cteq6l1
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
 tar zxfv HepMC-2.06.11.tar.gz
