@@ -70,6 +70,6 @@ make -j 2 -C build
 make install -C build
 
 export HEPMCOUT=output.hepmc
-#TESTINSTALLDIR/bin/cascade < TESTINSTALLDIR//share/cascade/LHE/steering-DY-PH.txt
+TESTINSTALLDIR/bin/rapgap_hepmc  < TESTINSTALLDIR//share/rapgap/steer-ep
 head -n 40 output.hepmc*
 

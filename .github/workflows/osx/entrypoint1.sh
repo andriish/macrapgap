@@ -61,14 +61,14 @@ cd ..
 #cd ..
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
-cd cascade
+cd rapgap
 git checkout cmake
 autoreconf -fisv
 #this will enable hepmc3 only if it is present
-./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc3=/usr/local  --with-lhapdf=/usr/local
+./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local  --with-lhapdf=/usr/local
 make -j 2 
 make install 
 export HEPMCOUT=output.hepmc
-#TESTINSTALLDIR/bin/cascade < TESTINSTALLDIR//share/cascade/LHE/steering-DY-PH.txt
+TESTINSTALLDIR/bin/rapgap_hepmc < TESTINSTALLDIR/share/rapgap/steer-ep
 head -n 40 output.hepmc*
 
