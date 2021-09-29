@@ -61,7 +61,7 @@ cd ..
 #
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout cmake
+git checkout cmakefixes
 #autoreconf -fisv
 #this will enable hepmc3 only if it is present
 #./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local 
@@ -72,5 +72,6 @@ make install -C build
 
 export HEPMCOUT=output.hepmc
 TESTINSTALLDIR/bin/rapgap_hepmc  < TESTINSTALLDIR//share/rapgap/steer-ep
+TESTINSTALLDIR/bin/rapgap_hepmc  < TESTINSTALLDIR//share/rapgap/steer-ep-no-qedrad-dis-ipro12
 head -n 40 output.hepmc*
 
