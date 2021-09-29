@@ -63,7 +63,6 @@ cd ..
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout cmake
 autoreconf -fisv
 #this will enable hepmc3 only if it is present
 ./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local  --with-lhapdf6=/usr/local
