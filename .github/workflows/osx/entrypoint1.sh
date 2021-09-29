@@ -52,7 +52,7 @@ cd LHAPDF-6.3.0
 ./configure --prefix=/usr/local
 make -j 2  install
 cd ..
-lhapdf install cteq6l1
+lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
 tar zxfv HepMC-2.06.11.tar.gz
@@ -63,6 +63,7 @@ cd ..
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
+git checkout cmakefix
 autoreconf -fisv
 #this will enable hepmc3 only if it is present
 ./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local  --with-lhapdf6=/usr/local
