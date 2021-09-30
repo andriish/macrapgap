@@ -58,15 +58,15 @@ lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
 tar zxfv HepMC-2.06.11.tar.gz
-cd HepMC-2.06.11
-autoreconf -fisv
-./configure --prefix=/usr/local  --with-momentum=GEV  --with-length=CM 
-#cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
-#make -j 2 -C buildHepMC-2.06.11
-#make install -C buildHepMC-2.06.11
-make -j 2
-make install
-cd ..
+cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
+make -j 2 -C buildHepMC-2.06.11
+make install -C buildHepMC-2.06.11
+#cd HepMC-2.06.11
+#autoreconf -fisv
+#./configure --prefix=/usr/local  --with-momentum=GEV  --with-length=CM 
+#make -j 2
+#make install
+#cd ..
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
