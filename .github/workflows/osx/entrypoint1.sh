@@ -70,7 +70,7 @@ cd ..
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout cmakefix
+git checkout hepmc3norivet
 autoreconf -fisv
 ./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local  --with-lhapdf6=/usr/local
 make -j 2 
