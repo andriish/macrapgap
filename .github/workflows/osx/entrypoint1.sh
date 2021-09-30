@@ -54,7 +54,7 @@ cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 #make -j 2  install
 #cd ..
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
-lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1
+lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1 CT10
 ###########
 #wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
 #tar zxfv HepMC-2.06.11.tar.gz
