@@ -36,7 +36,6 @@ else
    export F77=gfortran
    export LD=gfortran
 fi
-export CXXFLAGS=-std=c++14
 cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 ###########
 #wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
