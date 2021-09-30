@@ -4,7 +4,7 @@ export TOP=$(pwd)
 mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
-brew install hepmc lhapdf  
+#brew install hepmc lhapdf  
 brew install wget coreutils  
 brew install gsl
 brew install gnu-sed
@@ -71,7 +71,9 @@ autoreconf -fisv
 make -j 2 
 make install 
 export HEPMCOUT=output.hepmc
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$(pwd)/TESTINSTALLDIR/lib
 chmod +x TESTINSTALLDIR/bin/rapgap_hepmc
+ls -lah TESTINSTALLDIR/bin/rapgap_hepmc
 TESTINSTALLDIR/bin/rapgap_hepmc < TESTINSTALLDIR/share/steer-ep
 head -n 40 output.hepmc*
 
