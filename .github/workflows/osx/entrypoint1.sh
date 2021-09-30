@@ -67,7 +67,7 @@ git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 git checkout cmakefix
 autoreconf -fisv
-./configure  --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local  --with-lhapdf6=/usr/local
+./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local  --with-lhapdf6=/usr/local
 make -j 2 
 make install 
 export HEPMCOUT=output.hepmc
