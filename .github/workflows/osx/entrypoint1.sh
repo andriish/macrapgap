@@ -4,6 +4,7 @@ export TOP=$(pwd)
 mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
+brew install hepmc lhapdf  
 brew install wget coreutils  
 brew install gsl
 brew install gnu-sed
@@ -46,20 +47,21 @@ cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 #cd ..
 #find /usr | grep HepMC3
 ########
-wget  https://www.hepforge.org/archive/lhapdf/LHAPDF-6.3.0.tar.gz
-tar zxvf LHAPDF-6.3.0.tar.gz
-cd LHAPDF-6.3.0
-./configure --prefix=/usr/local
-make -j 2  install
-cd ..
+#wget  https://www.hepforge.org/archive/lhapdf/LHAPDF-6.3.0.tar.gz
+#tar zxvf LHAPDF-6.3.0.tar.gz
+#cd LHAPDF-6.3.0
+#./configure --prefix=/usr/local
+#make -j 2  install
+#cd ..
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1
 ###########
-wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
-tar zxfv HepMC-2.06.11.tar.gz
-cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
-make -j 2 -C buildHepMC-2.06.11
-make install -C buildHepMC-2.06.11
-cd ..
+#wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
+#tar zxfv HepMC-2.06.11.tar.gz
+#cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
+#make -j 2 -C buildHepMC-2.06.11
+#make install -C buildHepMC-2.06.11
+#cd ..
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
