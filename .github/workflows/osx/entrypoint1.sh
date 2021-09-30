@@ -72,6 +72,7 @@ autoreconf -fisv
 make -j 2 
 make install 
 export HEPMCOUT=output.hepmc
+chmod +x TESTINSTALLDIR/bin/rapgap_hepmc
 TESTINSTALLDIR/bin/rapgap_hepmc < TESTINSTALLDIR/share/steer-ep
 head -n 40 output.hepmc*
 
