@@ -70,7 +70,7 @@ lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 git checkout hepmc3norivet3
-rm -rf libtool
+rm -rf libtool configure
 autoreconf -fisv
 ./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=no --with-hepmc3=/usr/local  --with-lhapdf6=/usr/local
 make -j 2 
@@ -85,6 +85,5 @@ xattr TESTINSTALLDIR/bin/rapgap_hepmc
 otool -L  TESTINSTALLDIR/bin/rapgap_hepmc
 TESTINSTALLDIR/bin/rapgap_hepmc  < TESTINSTALLDIR//share/rapgap/steer-ep
 head -n 40 output.hepmc*
-
 
 
