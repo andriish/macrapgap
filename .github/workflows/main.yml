@@ -56,3 +56,16 @@ jobs:
       run: ./.github/workflows/osx/entrypoint2.sh
     - name: Get the output status
       run: exit ${{ steps.compile.outputs.out }}
+
+  compilejobOSX-11-entrypoint3:
+    runs-on: macos-11
+    name: cascade_on_OSX11-entrypoint3
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Compile
+      id: compile
+      run: ./.github/workflows/osx/entrypoint3.sh
+    - name: Get the output status
+      run: exit ${{ steps.compile.outputs.out }}
+
