@@ -69,7 +69,7 @@ lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout hepmc3norivet2
+git checkout hepmc3norivet3
 rm -rf libtool
 autoreconf -fisv
 ./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=no --with-hepmc3=/usr/local  --with-lhapdf6=/usr/local
