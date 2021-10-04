@@ -72,9 +72,12 @@ cd rapgap
 git checkout hepmc3norivet
 rm -rf libtool
 autoreconf -fisv
-./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
+./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
 make -j 2 
 make install 
+export DYLD_PRINT_LIBRARIES=1
+export DYLD_PRINT_LIBRARIES_POST_LAUNCH=1
+export DYLD_PRINT_RPATHS=1
 export HEPMCOUT=output.hepmc
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$(pwd)/TESTINSTALLDIR/lib
 ls -lah TESTINSTALLDIR/bin/rapgap_hepmc
