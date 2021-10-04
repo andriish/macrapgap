@@ -1,6 +1,6 @@
 #!/bin/sh -l
 set -x
-#exit
+exit
 export TOP=$(pwd)
 mkdir LOCAL
 cd LOCAL
