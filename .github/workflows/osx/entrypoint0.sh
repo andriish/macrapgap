@@ -72,7 +72,7 @@ cd rapgap
 git checkout hepmc3norivet3
 rm -rf libtool configure
 autoreconf -fisv
-./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=no --with-hepmc3=/usr/local  --with-lhapdf6=/usr/local
+./configure --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=no --with-hepmc3=/usr/local  --with-lhapdf6=/usr/local
 make -j 2 
 make install 
 export DYLD_PRINT_LIBRARIES=1
