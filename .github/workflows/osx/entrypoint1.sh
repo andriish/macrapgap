@@ -6,20 +6,20 @@ cd LOCAL
 brew tap davidchall/hep
 #brew install hepmc lhapdf  
 brew install wget coreutils  
-brew install gsl
+#brew install gsl
 brew install gnu-sed
 brew install gcc
 brew install cmake
-brew install zlib 
+#brew install zlib 
 brew install autoconf 
 brew install automake 
 brew install libtool 
 brew install pkg-config
-brew install --cask basictex
-eval "$(/usr/libexec/path_helper)"	
+#brew install --cask basictex
+#eval "$(/usr/libexec/path_helper)"	
 export PATH=$PATH:/usr/local/bin:/usr/local//Cellar/gcc/11.1.0_1/libexec/gcc/x86_64-apple-darwin19/11.1.0/:/Library/TeX/texbin/
-sudo tlmgr update --self
-sudo tlmgr install sectsty collection-fontsrecommended
+#sudo tlmgr update --self
+#sudo tlmgr install sectsty collection-fontsrecommended
 #####
 
 which gfortran-11
