@@ -83,6 +83,7 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$(pwd)/TESTINSTALLDIR/lib
 ls -lah TESTINSTALLDIR/bin/rapgap_hepmc
 xattr TESTINSTALLDIR/bin/rapgap_hepmc
 otool -L  TESTINSTALLDIR/bin/rapgap_hepmc
+TESTINSTALLDIR/bin/rapgap  < TESTINSTALLDIR//share/rapgap/steer-ep
 TESTINSTALLDIR/bin/rapgap_hepmc  < TESTINSTALLDIR//share/rapgap/steer-ep
 head -n 40 output.hepmc*
 
