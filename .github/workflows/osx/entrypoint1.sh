@@ -36,6 +36,9 @@ else
    export F77=gfortran
    export LD=gfortran
 fi
+export CXX=clang++
+export CC=clang
+
 cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 ###########
 #wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
@@ -80,9 +83,18 @@ export DYLD_PRINT_LIBRARIES_POST_LAUNCH=1
 export DYLD_PRINT_RPATHS=1
 export HEPMCOUT=output.hepmc
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$(pwd)/TESTINSTALLDIR/lib
+ls -lah TESTINSTALLDIR/bin/rapgap33
+xattr TESTINSTALLDIR/bin/rapgap33
+otool -L  TESTINSTALLDIR/bin/rapgap33
 ls -lah TESTINSTALLDIR/bin/rapgap_hepmc
 xattr TESTINSTALLDIR/bin/rapgap_hepmc
 otool -L  TESTINSTALLDIR/bin/rapgap_hepmc
+TESTINSTALLDIR/bin/rapgap33  < TESTINSTALLDIR//share/rapgap/steer-ep
 TESTINSTALLDIR/bin/rapgap_hepmc  < TESTINSTALLDIR//share/rapgap/steer-ep
 head -n 40 output.hepmc*
+
+
+
+
+
 
