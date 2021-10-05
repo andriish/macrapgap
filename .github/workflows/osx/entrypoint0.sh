@@ -40,7 +40,7 @@ cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
 tar zxfv HepMC3-3.2.4.tar.gz
-cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr/local -DHEPMC3_ENABLE_PYTHON:BOOL=OFF
+cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr/local -DHEPMC3_ENABLE_PYTHON:BOOL=OFF -DCMAKE_CXX_COMPILER=$(CXX) -DCMAKE_Fortran_COMPILER=$(FC)
 make -j 2 -C buildHepMC3-3.2.4
 sudo make install -C buildHepMC3-3.2.4
 #cd ..
