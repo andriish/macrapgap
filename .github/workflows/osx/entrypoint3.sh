@@ -1,6 +1,6 @@
 #!/bin/sh -l
 set -x
-exit
+#exit
 export TOP=$(pwd)
 mkdir LOCAL
 cd LOCAL
@@ -35,6 +35,9 @@ else
    export F77=gfortran
    export LD=gfortran
 fi
+   export CXX=g++-11
+   export CC=gcc-11
+   export FC=gfortran-11
 cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz

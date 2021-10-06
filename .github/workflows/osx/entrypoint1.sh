@@ -36,8 +36,9 @@ else
    export F77=gfortran
    export LD=gfortran
 fi
-export CXX=clang++
-export CC=clang
+   export CXX=g++-11
+   export CC=gcc-11
+   export FC=gfortran-11
 
 cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 ###########
@@ -72,7 +73,7 @@ make install -C buildHepMC-2.06.11
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout hepmc3norivet3
+git checkout hepmc3norivet
 rm -rf libtool configure
 autoreconf -fisv
 ./configure --with-pic=yes --disable-static --enable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local

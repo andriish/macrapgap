@@ -37,8 +37,9 @@ else
    export F77=gfortran
    export LD=gfortran
 fi
-export CXX=clang++
-export CC=clang
+   export CXX=g++-11
+   export CC=gcc-11
+   export FC=gfortran-11
 cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
@@ -72,7 +73,7 @@ lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout hepmc3norivet3
+git checkout hepmc3norivet
 rm -rf libtool configure
 autoreconf -fisv
 ./configure --with-pic  --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=no --with-hepmc3=/usr/local  --with-lhapdf6=/usr/local
