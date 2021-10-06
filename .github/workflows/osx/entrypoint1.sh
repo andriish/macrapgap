@@ -72,7 +72,7 @@ make install -C buildHepMC-2.06.11
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout hepmc3norivet3
+git checkout hepmc3norivet4
 rm -rf libtool configure
 autoreconf -fisv
 ./configure --with-pic=yes --disable-static --enable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
