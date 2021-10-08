@@ -74,12 +74,12 @@ make install -C buildHepMC-2.06.11
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 git checkout hepmc3norivet4
-rm -rf libtool configure
+rm -rf libtool configure aclocal.m4
 #AUTOTOOLS MUST DIE
 #https://stackoverflow.com/questions/53121019/ld-bind-at-load-and-bitcode-bundle-xcode-setting-enable-bitcode-yes-cannot
-autoreconf -fisv	
+autoreconf -fisv	 --force
 ./configure --with-pic --disable-static --enable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
-cat libtool | grep -C MACOSX_DEPLOYMENT_TARGET 
+cat libtool | grep -C 10 MACOSX_DEPLOYMENT_TARGET 
 make -j 2 
 make install 
 export DYLD_PRINT_LIBRARIES=1
