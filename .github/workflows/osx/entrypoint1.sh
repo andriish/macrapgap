@@ -87,6 +87,7 @@ export MACOSX_DEPLOYMENT_TARGET=11.5
 cat libtool | grep -C 10 MACOSX_DEPLOYMENT_TARGET 
 #gsed -i 's/\$wl-bind_at_load//g' libtool
 #gsed -i 's/no-common/PIC/g' libtool
+#SO FAR DW wo below
 #gsed -i 's/dynamic_lookup/dynamic_lookup \\\$\{wl\}\-flat_namespace/g' libtool
 
 
