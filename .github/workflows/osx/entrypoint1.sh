@@ -57,7 +57,7 @@ cd LHAPDF-6.3.0
 make -j 2  install
 cd ..
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
-lhapdf --quiet --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1 CT10
+lhapdf --quiet --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1 CT10 > /dev/null
 ###########
 wget -q https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
 tar zxf HepMC-2.06.11.tar.gz
