@@ -77,7 +77,7 @@ git checkout hepmc3norivet4
 rm -rf libtool configure aclocal.m4
 #AUTOTOOLS MUST DIE
 #https://stackoverflow.com/questions/53121019/ld-bind-at-load-and-bitcode-bundle-xcode-setting-enable-bitcode-yes-cannot
-autoreconf -fisv	 --force
+autoreconf -isv 
 ./configure --with-pic --disable-static --enable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
 cat libtool | grep -C 10 MACOSX_DEPLOYMENT_TARGET 
 make -j 2 
