@@ -1,6 +1,6 @@
 #!/bin/sh -l
 set -x
-exit
+#exit
 export TOP=$(pwd)
 mkdir LOCAL
 cd LOCAL
@@ -74,17 +74,12 @@ lhapdf --quiet --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ instal
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 git checkout hepmc3norivet4
-rm -rf libtool configure
-autoreconf -fisv
-./configure --with-pic  --disable-static --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=no --with-hepmc3=/usr/local  --with-lhapdf6=/usr/local
-
-
-cat libtool | grep -C 10 MACOSX_DEPLOYMENT_TARGET 
-gsed -i 's/\$wl-bind_at_load//g' libtool
-gsed -i 's/no-common/PIC/g' libtool
-gsed -i 's/dynamic_lookup/dynamic_lookup \\\$\{wl\}\-flat_namespace/g' libtool
-
-
+rm -rf libtool configure aclocal.m4
+#AUTOTOOLS MUST DIE
+#https://stackoverflow.com/questions/53121019/ld-bind-at-load-and-bitcode-bundle-xcode-setting-enable-bitcode-yes-cannot
+autoreconf -fisv 
+export MACOSX_DEPLOYMENT_TARGET=11.5
+./configure --disable-static --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=no --with-hepmc3=/usr/local  --with-lhapdf6=/usr/local
 make -j 2 
 make install 
 export DYLD_PRINT_LIBRARIES=1
