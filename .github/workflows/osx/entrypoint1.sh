@@ -81,12 +81,14 @@ rm -rf libtool configure aclocal.m4
 #https://stackoverflow.com/questions/53121019/ld-bind-at-load-and-bitcode-bundle-xcode-setting-enable-bitcode-yes-cannot
 autoreconf -isv 
 #export MACOSX_DEPLOYMENT_TARGET-10.0="10.14.1"
-./configure  --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
+#./configure  --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
+./configure --with-pic  --disable-static --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
 
 cat libtool | grep -C 10 MACOSX_DEPLOYMENT_TARGET 
 gsed -i 's/\$wl-bind_at_load//g' libtool
 cat libtool | grep -C 10 MACOSX_DEPLOYMENT_TARGET 
 cat libtool | grep -C 10 bind_at_load 
+cat libtool | grep -C 10 '\$wl'
 make -j 2 
 make install 
 export DYLD_PRINT_LIBRARIES=1
