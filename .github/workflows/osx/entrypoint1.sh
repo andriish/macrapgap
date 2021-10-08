@@ -75,7 +75,10 @@ git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 git checkout hepmc3norivet4
 rm -rf libtool configure
+#AUTOTOOLS MUST DIE
+#https://stackoverflow.com/questions/53121019/ld-bind-at-load-and-bitcode-bundle-xcode-setting-enable-bitcode-yes-cannot
 autoreconf -fisv
+cat libtool | grep -C MACOSX_DEPLOYMENT_TARGET 
 ./configure --with-pic --disable-static --enable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
 make -j 2 
 make install 
