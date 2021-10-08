@@ -86,9 +86,11 @@ autoreconf -isv
 
 cat libtool | grep -C 10 MACOSX_DEPLOYMENT_TARGET 
 gsed -i 's/\$wl-bind_at_load//g' libtool
+gsed -i 's/no-common/PIC/g' libtool
 cat libtool | grep -C 10 MACOSX_DEPLOYMENT_TARGET 
 cat libtool | grep -C 10 bind_at_load 
 cat libtool | grep -C 10 '\$wl'
+cat libtool | grep -C 10 'PIC'
 make -j 2 
 make install 
 export DYLD_PRINT_LIBRARIES=1
