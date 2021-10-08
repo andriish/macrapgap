@@ -75,7 +75,7 @@ make install -C buildHepMC-2.06.11
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 
-git checkout hepmc3norivet4
+git checkout hepmc3norivet
 rm -rf libtool configure aclocal.m4
 #AUTOTOOLS MUST DIE
 #https://stackoverflow.com/questions/53121019/ld-bind-at-load-and-bitcode-bundle-xcode-setting-enable-bitcode-yes-cannot
