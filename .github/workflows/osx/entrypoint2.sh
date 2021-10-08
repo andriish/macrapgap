@@ -1,6 +1,6 @@
 #!/bin/sh -l
 set -x
-#exit
+
 export TOP=$(pwd)
 mkdir LOCAL
 cd LOCAL
@@ -49,16 +49,16 @@ cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 #find /usr | grep HepMC3
 ########
 wget  https://www.hepforge.org/archive/lhapdf/LHAPDF-6.3.0.tar.gz
-tar zxvf LHAPDF-6.3.0.tar.gz
+tar zxf LHAPDF-6.3.0.tar.gz
 cd LHAPDF-6.3.0
 ./configure --prefix=/usr/local
 make -j 2  install
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
-lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1  CT10
+lhapdf --quiet --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1 CT10 > /dev/null
 cd ..
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
-tar zxfv HepMC-2.06.11.tar.gz
+tar zxf HepMC-2.06.11.tar.gz
 cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
 make -j 2 -C buildHepMC-2.06.11
 make install -C buildHepMC-2.06.11
@@ -71,7 +71,7 @@ make install -C buildHepMC-2.06.11
 #
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout hepmc3norivet
+git checkout hepmc3norivet4
 #autoreconf -fisv
 #this will enable hepmc3 only if it is present
 #./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local 

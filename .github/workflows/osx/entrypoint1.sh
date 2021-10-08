@@ -51,17 +51,17 @@ cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 #cd ..
 #find /usr | grep HepMC3
 ########
-wget  https://www.hepforge.org/archive/lhapdf/LHAPDF-6.3.0.tar.gz
-tar zxvf LHAPDF-6.3.0.tar.gz
+wget -q  https://www.hepforge.org/archive/lhapdf/LHAPDF-6.3.0.tar.gz
+tar zxf LHAPDF-6.3.0.tar.gz
 cd LHAPDF-6.3.0
 ./configure --prefix=/usr/local
 make -j 2  install
 cd ..
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
-lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1 CT10
+lhapdf --quiet --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1 CT10 > /dev/null
 ###########
-wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
-tar zxfv HepMC-2.06.11.tar.gz
+wget -q https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
+tar zxf HepMC-2.06.11.tar.gz
 cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM  -DCMAKE_CXX_COMPILER=$(CXX) -DCMAKE_Fortran_COMPILER=$(FC)
 make -j 2 -C buildHepMC-2.06.11
 make install -C buildHepMC-2.06.11
@@ -74,10 +74,14 @@ make install -C buildHepMC-2.06.11
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout hepmc3norivet
-rm -rf libtool configure
-autoreconf -fisv
-./configure  --disable-shared  --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
+
+git checkout hepmc3norivet4
+rm -rf libtool configure aclocal.m4
+#AUTOTOOLS MUST DIE
+#https://stackoverflow.com/questions/53121019/ld-bind-at-load-and-bitcode-bundle-xcode-setting-enable-bitcode-yes-cannot
+autoreconf -isv 
+./configure  --disable-shared --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=no --with-lhapdf6=/usr/local
+cat libtool | grep -C 10 MACOSX_DEPLOYMENT_TARGET 
 make -j 2 
 make install 
 export DYLD_PRINT_LIBRARIES=1
