@@ -42,7 +42,7 @@ cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
 tar zxfv HepMC3-3.2.4.tar.gz
-cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr/mylocal -DHEPMC3_ENABLE_PYTHON:BOOL=OFF
+cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=$TOP/usr/mylocal -DHEPMC3_ENABLE_PYTHON:BOOL=OFF
 make -j 2 -C buildHepMC3-3.2.4
 sudo make install -C buildHepMC3-3.2.4
 find /usr | grep HepMC3
@@ -71,7 +71,7 @@ cd ..
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 git checkout hepmc3norivet5
-cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DRAPGAP_HEPMC2=OFF -DRAPGAP_HEPMC3=ON   -DHepMC3_DIR=/usr/mylocal
+cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DRAPGAP_HEPMC2=OFF -DRAPGAP_HEPMC3=ON   -DHepMC3_DIR=$TOP/usr/mylocal
 make -j 2 -C build
 make install -C build
 
