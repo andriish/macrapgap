@@ -70,11 +70,7 @@ cd ..
 #
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout hepmc3norivet
-#autoreconf -fisv
-#this will enable hepmc3 only if it is present
-#./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local 
-
+git checkout hepmc3norivet5
 cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DRAPGAP_HEPMC2=OFF -DRAPGAP_HEPMC3=ON   -DHepMC3_DIR=/usr/local
 make -j 2 -C build
 make install -C build

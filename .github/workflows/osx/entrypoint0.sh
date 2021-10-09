@@ -73,7 +73,7 @@ lhapdf --quiet --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ instal
 #################
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout hepmc3norivet
+git checkout hepmc3norivet5
 rm -rf libtool configure aclocal.m4
 #AUTOTOOLS MUST DIE
 #https://stackoverflow.com/questions/53121019/ld-bind-at-load-and-bitcode-bundle-xcode-setting-enable-bitcode-yes-cannot
