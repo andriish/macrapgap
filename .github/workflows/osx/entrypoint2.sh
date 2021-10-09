@@ -59,7 +59,7 @@ cd ..
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
 tar zxf HepMC-2.06.11.tar.gz
-cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
+cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM  -DCMAKE_INSTALL_PREFIX=/usr/mylocal
 make -j 2 -C buildHepMC-2.06.11
 make install -C buildHepMC-2.06.11
 #cd HepMC-2.06.11
@@ -72,7 +72,7 @@ make install -C buildHepMC-2.06.11
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 git checkout hepmc3norivet5
-cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DRAPGAP_HEPMC2=ON -DRAPGAP_HEPMC3=OFF   -DHepMC2_DIR=/usr/local 
+cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DRAPGAP_HEPMC2=ON -DRAPGAP_HEPMC3=OFF   -DHepMC2_DIR=/usr/mylocal 
 make -j 2 -C build
 make install -C build
 

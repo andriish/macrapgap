@@ -42,7 +42,7 @@ cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
 tar zxfv HepMC3-3.2.4.tar.gz
-cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr/local -DHEPMC3_ENABLE_PYTHON:BOOL=OFF
+cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr/mylocal -DHEPMC3_ENABLE_PYTHON:BOOL=OFF
 make -j 2 -C buildHepMC3-3.2.4
 sudo make install -C buildHepMC3-3.2.4
 find /usr | grep HepMC3
@@ -53,7 +53,7 @@ cd LHAPDF-6.3.0
 ./configure --prefix=/usr/local
 make -j 2  install
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
-lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1  CT10
+lhapdf --source=http://lhapdfsets.web.cern.ch/lhapdfsets/current/ install cteq6l1  CT10  > /dev/null
 cd ..
 ###########
 #wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
@@ -71,7 +71,7 @@ cd ..
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 git checkout hepmc3norivet5
-cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DRAPGAP_HEPMC2=OFF -DRAPGAP_HEPMC3=ON   -DHepMC3_DIR=/usr/local
+cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DRAPGAP_HEPMC2=OFF -DRAPGAP_HEPMC3=ON   -DHepMC3_DIR=/usr/mylocal
 make -j 2 -C build
 make install -C build
 
