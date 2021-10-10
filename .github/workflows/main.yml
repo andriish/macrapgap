@@ -10,7 +10,7 @@ jobs:
   
   #compilejobOSX-10-entrypoint1:
     #runs-on: macos-10.15
-    #name: cascade_on_OSX10-entrypoint1
+    #name: rapgap_on_OSX10-entrypoint1
     #steps:
     #- name: Checkout
       #uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
       
   #compilejobOSX-10-entrypoint2:
     #runs-on: macos-10.15
-    #name: cascade_on_OSX10-entrypoint2
+    #name: rapgap_on_OSX10-entrypoint2
     #steps:
     #- name: Checkout
       #uses: actions/checkout@v2
@@ -34,7 +34,7 @@ jobs:
 
   compilejobOSX-11-entrypoint0:
     runs-on: macos-11
-    name: cascade_on_OSX11-entrypoint0
+    name: rapgap_on_OSX11-entrypoint0
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -46,7 +46,7 @@ jobs:
 
   compilejobOSX-11-entrypoint1:
     runs-on: macos-11
-    name: cascade_on_OSX11-entrypoint1
+    name: rapgap_on_OSX11-entrypoint1
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -58,7 +58,7 @@ jobs:
       
   compilejobOSX-11-entrypoint2:
     runs-on: macos-11
-    name: cascade_on_OSX11-entrypoint2
+    name: rapgap_on_OSX11-entrypoint2
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -70,7 +70,7 @@ jobs:
 
   compilejobOSX-11-entrypoint3:
     runs-on: macos-11
-    name: cascade_on_OSX11-entrypoint3
+    name: rapgap_on_OSX11-entrypoint3
     steps:
     - name: Checkout
       uses: actions/checkout@v2
