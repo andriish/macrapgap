@@ -72,8 +72,8 @@ git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
 git checkout hepmc3norivet
 cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DRAPGAP_HEPMC2=OFF -DRAPGAP_HEPMC3=ON   -DHepMC3_DIR=$TOP/usr/mylocal/share/HepMC3/cmake
-make -j 2 -C build
-make install -C build
+cmake --build build -j 2
+cmake --install build
 
 export HEPMCOUT=output.hepmc
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$(pwd)/TESTINSTALLDIR/lib
