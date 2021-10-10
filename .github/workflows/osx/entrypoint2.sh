@@ -71,7 +71,7 @@ make install -C buildHepMC-2.06.11
 #
 git clone https://gitlab.cern.ch/averbyts/rapgap
 cd rapgap
-git checkout hepmc3norivet5
+git checkout hepmc3norivet
 cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DRAPGAP_HEPMC2=ON -DRAPGAP_HEPMC3=OFF   -DHepMC2_DIR=$TOP/usr/mylocal 
 make -j 2 -C build
 make install -C build
